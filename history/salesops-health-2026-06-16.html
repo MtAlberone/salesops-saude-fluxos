@@ -42,8 +42,12 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
 .rbadge.sug{background:var(--amarelo);color:#0d1117}.rbadge.att{background:#2d333b;color:#c9d1d9}
 .rm{color:var(--mut);font-size:12px}
 .hist{margin:22px 0 6px}.hist h3{font-size:13px;color:var(--mut);margin:0 0 8px;font-weight:600}
-.spark{display:flex;gap:3px;align-items:flex-end;height:60px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px}
-.hd{display:flex;flex-direction:column-reverse;gap:1px;flex:1}.hd i{display:block;border-radius:1px;min-height:2px}
+.spark{display:flex;gap:10px;align-items:flex-end;height:84px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.hd{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;width:40px;flex:none;height:100%}
+.hd i{display:block;width:22px;border-radius:3px 3px 0 0;min-height:3px}
+.hd .hdl{font-size:10px;color:var(--mut);line-height:1}
+.hd .hdn{font-size:10px;color:var(--txt);line-height:1;font-weight:600}
+.hd:hover i{outline:1px solid var(--amarelo)}
 .foot{color:var(--mut);font-size:11px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body><div class="wrap">
 <header><h1>Saúde dos Fluxos <b>SalesOps</b></h1>
@@ -54,16 +58,8 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
 <div class="kpi s"><div class="n">2</div><div class="l">⚪ Sem dados</div></div>
 <div class="kpi g"><div class="n">18</div><div class="l">🟢 Saudável</div></div>
 </div>
-<div class="hist"><h3>Tendência (últimos dias · barras = 🔴 problemas / 🟡 atenção)</h3><div class="spark"><span class="hd" title="2026-06-16: 1🔴 12🟡"><i style="height:12px;background:#f85149"></i><i style="height:64px;background:#f5c518"></i></span></div></div>
-<div class="radar"><h3>📡 Radar (24h) — fluxos fora do subset que erraram</h3><div class="rsub">Volume é amostra (até 100 execuções recentes). 📌 = candidato a entrar na monitoria · 👀 = ponto de atenção pontual.</div><div class="rcard sug">
-  <div class="rtop"><span class="rname">Agente Wordpress</span><span class="rbadge sug">📌 sugiro monitorar</span>
-    <span class="rm">amostra: 100+ exec · ❌ 13 erro(s)/24h</span></div>
-  <div class="errs"><div class="err"><span class="node">Stop and Error</span> Excedeu run</div><div class="err"><span class="node">Stop and Error</span> Excedeu run</div></div>
-</div><div class="rcard sug">
-  <div class="rtop"><span class="rname">func atualizar_sdr - Dalila</span><span class="rbadge sug">📌 sugiro monitorar</span>
-    <span class="rm">amostra: 100+ exec · ❌ 7 erro(s)/24h</span></div>
-  <div class="errs"><div class="err"><span class="node">Call 'SDL - Distribuir Leads Proximo da Fila'</span> Node 'Pegar SDR1' hasn't been executed</div><div class="err"><span class="node">Call 'SDL - Distribuir Leads Proximo da Fila'</span> Node 'Pegar SDR1' hasn't been executed</div></div>
-</div><div class="rcard ">
+<div class="hist"><h3>Erros por dia — últimos 7 dias (execuções com erro no ambiente)</h3><div class="spark"><span class="hd" title="2026-06-10: 103 erro(s)"><span class="hdn">103</span><i style="height:16px;background:#f5c518"></i><span class="hdl">10/06</span></span><span class="hd" title="2026-06-11: 381 erro(s)"><span class="hdn">381</span><i style="height:53px;background:#f5c518"></i><span class="hdl">11/06</span></span><span class="hd" title="2026-06-12: 72 erro(s)"><span class="hdn">72</span><i style="height:12px;background:#f5c518"></i><span class="hdl">12/06</span></span><span class="hd" title="2026-06-13: 72 erro(s)"><span class="hdn">72</span><i style="height:12px;background:#f5c518"></i><span class="hdl">13/06</span></span><span class="hd" title="2026-06-14: 322 erro(s)"><span class="hdn">322</span><i style="height:45px;background:#f5c518"></i><span class="hdl">14/06</span></span><span class="hd" title="2026-06-15: 185 erro(s)"><span class="hdn">185</span><i style="height:27px;background:#f5c518"></i><span class="hdl">15/06</span></span><span class="hd" title="2026-06-16: 54 erro(s)"><span class="hdn">54</span><i style="height:10px;background:#f5c518"></i><span class="hdl">16/06</span></span></div></div>
+<div class="radar"><h3>📡 Radar (24h) — fluxos fora do subset que erraram</h3><div class="rsub">Volume é amostra (até 100 execuções recentes). 📌 = candidato a entrar na monitoria · 👀 = ponto de atenção pontual.</div><div class="rcard ">
   <div class="rtop"><span class="rname">func_qualificar_lead</span><span class="rbadge att">👀 atenção</span>
     <span class="rm">amostra: 100+ exec · ❌ 1 erro(s)/24h</span></div>
   <div class="errs"><div class="err"><span class="node">Buscar dados CRM1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
@@ -73,7 +69,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="errs"><div class="err"><span class="node">Qualificar Lead</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
 </div><div class="rcard ">
   <div class="rtop"><span class="rname">func transferir_vendedor - Dalila</span><span class="rbadge att">👀 atenção</span>
-    <span class="rm">amostra: 22 exec · ❌ 1 erro(s)/24h</span></div>
+    <span class="rm">amostra: 24 exec · ❌ 1 erro(s)/24h</span></div>
   <div class="errs"><div class="err"><span class="node">Atualizar status</span> Bad request - please check your parameters</div></div>
 </div></div>
 <div class="bar"><b style="font-size:12px">Status:</b>
