@@ -1,0 +1,561 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saúde dos Fluxos SalesOps — 2026-06-16</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2333;--line:#2d333b;--txt:#e6edf3;--mut:#8b949e;--amarelo:#f5c518}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+header{border-bottom:2px solid var(--amarelo);padding-bottom:16px;margin-bottom:22px}
+h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.summary{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 18px;min-width:96px}
+.kpi .n{font-size:26px;font-weight:700}.kpi .l{color:var(--mut);font-size:12px}
+.kpi.r{border-left:3px solid #f85149}.kpi.a{border-left:3px solid var(--amarelo)}.kpi.g{border-left:3px solid #3fb950}.kpi.s{border-left:3px solid #8b949e}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 6px}
+.bar button{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px}
+.bar button.on{background:var(--amarelo);color:#0d1117;border-color:var(--amarelo);font-weight:600}
+.bar .sep{color:var(--mut);font-size:12px;margin-left:6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:8px 0;overflow:hidden}
+.chead{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer}
+.chead:hover{background:var(--panel2)}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.cname{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badges .b{font-size:10px;padding:2px 7px;border-radius:10px;margin-left:5px;border:1px solid var(--line);color:var(--mut)}
+.badges .dono{background:#23304a;color:#9cc3ff;border-color:#2b3a5c}
+.metrics{color:var(--mut);font-size:12px;flex:none;margin-left:8px}
+.cbody{display:none;padding:0 14px 14px 35px;border-top:1px solid var(--line)}
+.card.open .cbody{display:block}
+.diag{margin:10px 0 6px}.ts{color:var(--mut);font-size:12px;margin-bottom:8px}
+.errs{background:#1a1011;border:1px solid #3d2526;border-radius:8px;padding:8px 10px;font-size:12px}
+.err{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;margin:4px 0;color:#ffb4ab}
+.err .node{color:var(--amarelo);margin-right:6px}
+.rec{background:#0f1a12;border:1px solid #20422a;border-radius:8px;padding:8px 10px;margin-top:8px;font-size:13px}
+.radar{margin:22px 0;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--amarelo);border-radius:10px;padding:14px 16px}
+.radar h3{font-size:14px;margin:0 0 4px}.radar .rsub{color:var(--mut);font-size:12px;margin-bottom:10px}
+.radar .rempty{color:var(--mut);font-size:13px}.rcap{color:#f5c518;font-size:11px}
+.rpromo{background:#0f1a12;border:1px solid #20422a;border-radius:6px;padding:6px 10px;font-size:12px;margin-bottom:10px}
+.rcard{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:7px 0}
+.rcard.sug{border-color:#5a4a13;background:#1f1b0c}
+.rtop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rname{font-weight:600;flex:1;min-width:140px}
+.rbadge{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:600}
+.rbadge.sug{background:var(--amarelo);color:#0d1117}.rbadge.att{background:#2d333b;color:#c9d1d9}
+.rm{color:var(--mut);font-size:12px}
+.hist{margin:22px 0 6px}.hist h3{font-size:13px;color:var(--mut);margin:0 0 8px;font-weight:600}
+.spark{display:flex;gap:3px;align-items:flex-end;height:60px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px}
+.hd{display:flex;flex-direction:column-reverse;gap:1px;flex:1}.hd i{display:block;border-radius:1px;min-height:2px}
+.foot{color:var(--mut);font-size:11px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body><div class="wrap">
+<header><h1>Saúde dos Fluxos <b>SalesOps</b></h1>
+<div class="sub">Subset crítico · 33 fluxos monitorados · Relatório de 2026-06-16</div></header>
+<div class="summary">
+<div class="kpi r"><div class="n">1</div><div class="l">🔴 Problema</div></div>
+<div class="kpi a"><div class="n">12</div><div class="l">🟡 Atenção</div></div>
+<div class="kpi s"><div class="n">2</div><div class="l">⚪ Sem dados</div></div>
+<div class="kpi g"><div class="n">18</div><div class="l">🟢 Saudável</div></div>
+</div>
+<div class="hist"><h3>Tendência (últimos dias · barras = 🔴 problemas / 🟡 atenção)</h3><div class="spark"><span class="hd" title="2026-06-16: 1🔴 12🟡"><i style="height:12px;background:#f85149"></i><i style="height:64px;background:#f5c518"></i></span></div></div>
+<div class="radar"><h3>📡 Radar (24h) — fluxos fora do subset que erraram</h3><div class="rsub">Volume é amostra (até 100 execuções recentes). 📌 = candidato a entrar na monitoria · 👀 = ponto de atenção pontual.</div><div class="rcard sug">
+  <div class="rtop"><span class="rname">Agente Wordpress</span><span class="rbadge sug">📌 sugiro monitorar</span>
+    <span class="rm">amostra: 100+ exec · ❌ 13 erro(s)/24h</span></div>
+  <div class="errs"><div class="err"><span class="node">Stop and Error</span> Excedeu run</div><div class="err"><span class="node">Stop and Error</span> Excedeu run</div></div>
+</div><div class="rcard sug">
+  <div class="rtop"><span class="rname">func atualizar_sdr - Dalila</span><span class="rbadge sug">📌 sugiro monitorar</span>
+    <span class="rm">amostra: 100+ exec · ❌ 7 erro(s)/24h</span></div>
+  <div class="errs"><div class="err"><span class="node">Call 'SDL - Distribuir Leads Proximo da Fila'</span> Node 'Pegar SDR1' hasn't been executed</div><div class="err"><span class="node">Call 'SDL - Distribuir Leads Proximo da Fila'</span> Node 'Pegar SDR1' hasn't been executed</div></div>
+</div><div class="rcard ">
+  <div class="rtop"><span class="rname">func_qualificar_lead</span><span class="rbadge att">👀 atenção</span>
+    <span class="rm">amostra: 100+ exec · ❌ 1 erro(s)/24h</span></div>
+  <div class="errs"><div class="err"><span class="node">Buscar dados CRM1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
+</div><div class="rcard ">
+  <div class="rtop"><span class="rname">Verificar atividades - Dalila SDR</span><span class="rbadge att">👀 atenção</span>
+    <span class="rm">amostra: 100+ exec · ❌ 1 erro(s)/24h</span></div>
+  <div class="errs"><div class="err"><span class="node">Qualificar Lead</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
+</div><div class="rcard ">
+  <div class="rtop"><span class="rname">func transferir_vendedor - Dalila</span><span class="rbadge att">👀 atenção</span>
+    <span class="rm">amostra: 22 exec · ❌ 1 erro(s)/24h</span></div>
+  <div class="errs"><div class="err"><span class="node">Atualizar status</span> Bad request - please check your parameters</div></div>
+</div></div>
+<div class="bar"><b style="font-size:12px">Status:</b>
+<button class="on" onclick="filterStatus(this,'all')">Todos</button>
+<button onclick="filterStatus(this,'problema')">🔴 Problema</button>
+<button onclick="filterStatus(this,'atencao')">🟡 Atenção</button>
+<button onclick="filterStatus(this,'ok')">🟢 Saudável</button>
+<span class="sep">Dono:</span><button class="on" onclick="filterDono(this,'all')">Todos</button><button onclick="filterDono(this,'carlos')">carlos</button><button onclick="filterDono(this,'estevao')">estevao</button><button onclick="filterDono(this,'netto')">netto</button><button onclick="filterDono(this,'pedro')">pedro</button>
+</div>
+<div id="cards"><div class="card" data-status="problema" data-dono="netto" data-frente="sdl">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f85149"></span>
+    <span class="cname">SDL - Distribuir proximo fila</span>
+    <span class="badges"><span class="b frente">sdl</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 0 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🔴 <b>Problema.</b> Provável DUPLICATA MORTA: 0 sucessos, 5 erros 'connection cannot be established (host incorreto)' no node 'buscar fase' e nenhuma execução desde 09/06. O equivalente ativo e saudável é 'SDL - Distribuir Leads Proximo da Fila'.</div>
+    <div class="ts">Último sucesso: — · Último erro: 2026-06-09T19:57:34</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Confirmar com o Netto se é legado/duplicado e desativar/remover; se ainda for usado, corrigir o host do node 'buscar fase'.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="pedro" data-frente="campanhas-outbound">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">[OUTBOUND] Gerar Lista de Disparo de Campanha</span>
+    <span class="badges"><span class="b frente">campanhas-outbound</span><span class="b dono">pedro</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Erros recorrentes 'The row you are trying to update doesn't exist' (node 'Registra Analise Solicitada') e 'Bad request' (Atualizar Card). Recuperado hoje.</div>
+    <div class="ts">Último sucesso: 2026-06-16T11:30:01 · Último erro: 2026-06-15T14:28:08</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Registra Analise Solicitada</span> The row you are trying to update doesn't exist</div><div class="err"><span class="node">Atualizar Card</span> Bad request - please check your parameters</div><div class="err"><span class="node">Registra Analise Solicitada</span> The row you are trying to update doesn't exist</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Validar existência do registro antes do update e revisar parâmetros do card no Pipedrive.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="netto" data-frente="captacao-leads">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">[ECOM] Salvar Leads</span>
+    <span class="badges"><span class="b frente">captacao-leads</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Erros recorrentes 'Bad request' no node 'criar nota cadastro' (4x) e dependência 'buscar deals' não executada. Provável payload/condição quebrando um ramo.</div>
+    <div class="ts">Último sucesso: 2026-06-16T06:40:48 · Último erro: 2026-06-11T20:58:32</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Revisar parâmetros do node 'criar nota cadastro' e o condicional que pula 'buscar deals'.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="netto" data-frente="captacao-leads">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">[PERFORMANCE] Salvar Leads</span>
+    <span class="badges"><span class="b frente">captacao-leads</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Recuperado, mas houve ECONNREFUSED no Postgres (⟨ip-interno⟩:5432) à 00h de hoje no node 'SDL - adicionar deal' + rate-limit em 11/06.</div>
+    <div class="ts">Último sucesso: 2026-06-16T15:08:34 · Último erro: 2026-06-16T00:09:59</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">SDL - adicionar deal</span> connect ECONNREFUSED ⟨ip-interno⟩:5432</div><div class="err"><span class="node">criar card comercial1</span> The service is receiving too many requests from you</div><div class="err"><span class="node">criar task aprovado</span> The service is receiving too many requests from you</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Investigar indisponibilidade momentânea do Postgres SDL e avaliar retry no node 'SDL - adicionar deal'.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">func consulta_catalogo</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Tool de altíssimo reúso (20 agentes). Node 'Consulta Estoque' deu 'Service unavailable' e 'resource not found' (14-15/06). Recuperado, mas o serviço de estoque oscilou.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:51:48 · Último erro: 2026-06-15T03:10:34</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Habilitar retry automático no node 'Consulta Estoque' e checar disponibilidade do serviço de estoque.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">func enviar_arquivo - Dalila</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Erro recorrente 'Model output doesn't fit required format' no node 'AI Agent' (12-15/06, 5x). Saída do LLM fora do schema esperado.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:26:32 · Último erro: 2026-06-15T22:40:09</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Reforçar a instrução/parser de saída estruturada do AI Agent ou usar output parser com auto-fix.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">func mover_card</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> 'Multiple matches found' no node 'Estagio diferente?' 3x hoje + 'Wrong type: 171 é number, esperava string'. A busca de deal está retornando múltiplos resultados.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:52:41 · Último erro: 2026-06-16T11:49:43</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Tornar a busca de deal mais específica (evitar múltiplos matches) e converter o id para string na condição.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">function atualizar_crm_new</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Mesmo padrão do mover_card: 'Multiple matches found' (node Analise Credito) hoje + 'Bad request' no Pipedrive. Recuperado, mas recorrente.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:53:37 · Último erro: 2026-06-16T11:49:25</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Analise Credito1</span> Multiple matches found</div><div class="err"><span class="node">Analise Credito1</span> Multiple matches found</div><div class="err"><span class="node">Analise Credito</span> Multiple matches found</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Refinar a busca para retornar 1 registro e validar parâmetros do update no Pipedrive.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">function buscar_info - Dalila</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Tool de altíssimo reúso (16 agentes). Bug de código hoje: 'Cannot read properties of undefined (reading parts)' no node 'organizar informações1' + 'Service unavailable'. Último erro 14:51, sucesso 14:53.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:53:24 · Último erro: 2026-06-16T14:51:40</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">organizar informações1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">organizar informações1</span> Cannot read properties of undefined (reading 'parts')</div><div class="err"><span class="node">organizar informações1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Tratar resposta undefined (campo 'parts') no node 'organizar informações1' e habilitar retry no Service unavailable.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="netto" data-frente="infra">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">Backup Fluxos GitHub</span>
+    <span class="badges"><span class="b frente">infra</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Cron com metade das execuções falhando: 'Your request is invalid' no node 'Upadte File' (commit GitHub). Backups parciais.</div>
+    <div class="ts">Último sucesso: 2026-06-16T09:20:55 · Último erro: 2026-06-16T03:20:55</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Investigar o node 'Upadte File' — possível conflito de SHA/arquivo ou rate-limit da API do GitHub.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="netto" data-frente="infra">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">[PERFORMANCE] Atualizar base pipedrive</span>
+    <span class="badges"><span class="b frente">infra</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 3 ❌ 4</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Cron diário: sem execução registrada hoje (16/06) na janela e erros de rate-limit (09-12/06) no node 'pegar pipeline'. As execuções levam horas.</div>
+    <div class="ts">Último sucesso: 2026-06-15T05:00:26 · Último erro: 2026-06-12T05:00:26</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Confirmar se rodou hoje; adicionar throttle/backoff no node 'pegar pipeline' para evitar rate-limit do Pipedrive.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="mariah">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">Analista redes sociais - Mariah - SalesOps - Producao</span>
+    <span class="badges"><span class="b frente">mariah</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> Gateway timeout no node 'Cadastro Planilha' (Google Sheets) 4x em 15/06 + schema mismatch em 'midias_equipamentos' (00h hoje). Recuperado.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:59:36 · Último erro: 2026-06-16T00:00:30</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">midias_equipamentos</span> Received tool input did not match expected schema
+
+✖ Required
+  → at mensagem</div><div class="err"><span class="node">Cadastro Planilha</span> Gateway timed out - perhaps try again later?</div><div class="err"><span class="node">Cadastro Planilha</span> Gateway timed out - perhaps try again later?</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Verificar latência/timeout do Google Sheets em 'Cadastro Planilha' e o schema da tool 'midias_equipamentos'.</div>
+  </div>
+</div>
+<div class="card" data-status="atencao" data-dono="carlos" data-frente="orquestradora">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#f5c518"></span>
+    <span class="cname">[NOVO] Dalila - Orquestradora</span>
+    <span class="badges"><span class="b frente">orquestradora</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟡 <b>Atenção.</b> PRINCIPAL ATIVO. Burst hoje (13:20-13:24) de 'last can't be used on undefined value' no node 'guardrail_output' (4x seguidas) + 'service not able to process' no 'Enviar hyper2'. Recuperou às 14:52, mas é bug ativo no guardrail.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:53:08 · Último erro: 2026-06-16T13:24:02</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div></div>
+    <div class="rec"><b>Ação sugerida:</b> Corrigir 'guardrail_output' para tratar saída undefined (proteger o .last) e investigar instabilidade do envio Hyperflow.</div>
+  </div>
+</div>
+<div class="card" data-status="sem-dados" data-dono="pedro" data-frente="analise-credito">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#8b949e"></span>
+    <span class="cname">Monitor Analise de credito</span>
+    <span class="badges"><span class="b frente">analise-credito</span><span class="b dono">pedro</span></span>
+    <span class="metrics">✅ 0 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">⚪ <b>Sem dados.</b> Nenhuma execução (sucesso ou erro) na janela. Pode ser webhook pouco acionado ou legado.</div>
+    <div class="ts">Último sucesso: — · Último erro: —</div>
+    
+    <div class="rec"><b>Ação sugerida:</b> Verificar se o gatilho ainda é usado ou se o fluxo virou legado.</div>
+  </div>
+</div>
+<div class="card" data-status="sem-dados" data-dono="pedro" data-frente="campanhas-outbound">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#8b949e"></span>
+    <span class="cname">[OUTBOUND] DALILA - DISPARO - EMAIL</span>
+    <span class="badges"><span class="b frente">campanhas-outbound</span><span class="b dono">pedro</span></span>
+    <span class="metrics">✅ 0 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">⚪ <b>Sem dados.</b> Sem execuções na janela — campanha de disparo sob demanda. Sem alarme.</div>
+    <div class="ts">Último sucesso: — · Último erro: —</div>
+    
+    <div class="rec"><b>Ação sugerida:</b> Confirmar se havia disparo planejado no período.</div>
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="a2a">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">A2A</span>
+    <span class="badges"><span class="b frente">a2a</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Router A2A: timeouts no node 'Especialistas' e rate-limit no RAG (09-11/06); rodando normal hoje. Monitorar.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:51:27 · Último erro: 2026-06-11T18:50:08</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Especialistas</span> Request timed out.</div><div class="err"><span class="node">Especialistas</span> Request timed out.</div><div class="err"><span class="node">RAG_Base_Conhecimentos5</span> The service is receiving too many requests from you</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="pedro" data-frente="analise-credito">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">[BLIPS][ANALISE CREDITO] Atualizar Deals (Make-&gt; n8n -&gt;Make)(prod)</span>
+    <span class="badges"><span class="b frente">analise-credito</span><span class="b dono">pedro</span></span>
+    <span class="metrics">✅ 5 ❌ 3</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Erros antigos de rate-limit e 'Parsing failed'; sucessos recentes hoje.</div>
+    <div class="ts">Último sucesso: 2026-06-16T15:08:07 · Último erro: 2026-06-15T11:43:08</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Update a deal1</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Personalizar Mensagem</span> Parsing failed</div><div class="err"><span class="node">Personalizar Mensagem</span> Parsing failed</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="netto" data-frente="cadu-estoque">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">SEC - Principal</span>
+    <span class="badges"><span class="b frente">cadu-estoque</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Cron diário 03:40 rodando certinho, sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-16T03:40:03 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="netto" data-frente="captacao-leads">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">[PLATAFORMA] Salvar Leads Feiras</span>
+    <span class="badges"><span class="b frente">captacao-leads</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Sucessos recentes, sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:29:05 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="netto" data-frente="captacao-leads">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">[SUPRIMENTO] - Salvar Leads</span>
+    <span class="badges"><span class="b frente">captacao-leads</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Sucessos recentes, sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-16T13:10:17 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">Agent RAG</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Rate-limit recorrente no RAG_Base_Conhecimentos (tema comum hoje); recuperado. Monitorar quota da base de conhecimento.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:51:23 · Último erro: 2026-06-16T00:01:15</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">Token Plataforma</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Geração de token sem erros; saudável.</div>
+    <div class="ts">Último sucesso: 2026-06-16T15:09:06 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">agente_checklist</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-16T13:57:31 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">func finaliza_atendimento</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:10:11 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">func transferir_socorro - Dalila</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 1</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> 1 erro transitório 'service not able to process' (Transferir Hyper) em 15/06; ok desde então.</div>
+    <div class="ts">Último sucesso: 2026-06-16T15:05:31 · Último erro: 2026-06-15T12:50:33</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Transferir Hyper</span> The service was not able to process your request</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">func_bucar_layout_contrato</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Sem erros na janela.</div>
+    <div class="ts">Último sucesso: 2026-06-15T14:19:32 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">function registrar_crm</span>
+    <span class="badges"><span class="b frente">compartilhado</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Burst de rate-limit (node 'Buscar Deal') em 14/06; recuperado, sem erros desde.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:52:38 · Último erro: 2026-06-14T19:53:23</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="estevao" data-frente="condicao-comercial">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">agente_condicao_comercial</span>
+    <span class="badges"><span class="b frente">condicao-comercial</span><span class="b dono">estevao</span></span>
+    <span class="metrics">✅ 5 ❌ 1</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> 1 erro antigo (09/06) de service unavailable; saudável hoje.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:53:49 · Último erro: 2026-06-09T13:59:58</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">chamar_suporte</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="netto" data-frente="infra">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">Scraping videos Youtube Blips</span>
+    <span class="badges"><span class="b frente">infra</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Cron diário 03:10 sem erros.</div>
+    <div class="ts">Último sucesso: 2026-06-16T03:10:41 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="mariah">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">Repescagem</span>
+    <span class="badges"><span class="b frente">mariah</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 1</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> 1 timeout antigo (14/06); rodando ok.</div>
+    <div class="ts">Último sucesso: 2026-06-16T13:00:17 · Último erro: 2026-06-14T13:00:58</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">agent_followup</span> Request timed out.</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="carlos" data-frente="mariah">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">Repescagem de Leads Whatsapp - Mariah</span>
+    <span class="badges"><span class="b frente">mariah</span><span class="b dono">carlos</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Cron diário 03:30 sem erros.</div>
+    <div class="ts">Último sucesso: 2026-06-16T03:30:08 · Último erro: —</div>
+    
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="estevao" data-frente="planejadora">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">agente planejador</span>
+    <span class="badges"><span class="b frente">planejadora</span><span class="b dono">estevao</span></span>
+    <span class="metrics">✅ 5 ❌ 5</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> PRINCIPAL ATIVO. Erros só em 11/06 ('Bad request procurar deals', 'Node Webhook hasn't been executed'); saudável hoje.</div>
+    <div class="ts">Último sucesso: 2026-06-16T15:11:35 · Último erro: 2026-06-11T19:30:19</div>
+    <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">procurar deals</span> Bad request - please check your parameters</div><div class="err"><span class="node">Enviar orquestradora STIA</span> Node 'Webhook' hasn't been executed</div><div class="err"><span class="node">Enviar orquestradora STIA</span> Node 'Webhook' hasn't been executed</div></div>
+    
+  </div>
+</div>
+<div class="card" data-status="ok" data-dono="netto" data-frente="sdl">
+  <div class="chead" onclick="this.parentNode.classList.toggle('open')">
+    <span class="dot" style="background:#3fb950"></span>
+    <span class="cname">SDL - Distribuir Leads Proximo da Fila</span>
+    <span class="badges"><span class="b frente">sdl</span><span class="b dono">netto</span></span>
+    <span class="metrics">✅ 5 ❌ 0</span>
+  </div>
+  <div class="cbody">
+    <div class="diag">🟢 <b>Saudável.</b> Round-robin de leads sem erros na janela; saudável.</div>
+    <div class="ts">Último sucesso: 2026-06-16T14:21:21 · Último erro: —</div>
+    
+    
+  </div>
+</div></div>
+<div class="foot">Gerado pela skill <code>salesops-health-check</code> · dados via API n8n SalesOps · últimas 5 execuções de sucesso/erro por fluxo.</div>
+</div>
+<script>
+let fS='all',fD='all';
+function apply(){document.querySelectorAll('.card').forEach(c=>{
+  const okS=(fS==='all'||c.dataset.status===fS), okD=(fD==='all'||c.dataset.dono===fD);
+  c.style.display=(okS&&okD)?'':'none';});}
+function filterStatus(b,v){fS=v;b.parentNode.querySelectorAll('button').forEach((x,i)=>{if(i<5)x.classList.remove('on')});b.classList.add('on');apply();}
+function filterDono(b,v){fD=v;const bs=b.parentNode.querySelectorAll('button');bs.forEach((x,i)=>{if(i>=5)x.classList.remove('on')});b.classList.add('on');apply();}
+document.querySelectorAll('.card[data-status="problema"],.card[data-status="atencao"]').forEach(c=>c.classList.add('open'));
+</script></body></html>
