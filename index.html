@@ -89,6 +89,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🔴 <b>Problema.</b> Provável DUPLICATA MORTA: 0 sucessos, 5 erros 'connection cannot be established (host incorreto)' no node 'buscar fase' e nenhuma execução desde 09/06. O equivalente ativo e saudável é 'SDL - Distribuir Leads Proximo da Fila'.</div>
     <div class="ts">Último sucesso: — · Último erro: 2026-06-09T19:57:34</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div><div class="err"><span class="node">buscar fase</span> The connection cannot be established, this usually occurs due to an incorrect host (domain) value</div></div>
     <div class="rec"><b>Ação sugerida:</b> Confirmar com o Netto se é legado/duplicado e desativar/remover; se ainda for usado, corrigir o host do node 'buscar fase'.</div>
   </div>
@@ -103,6 +104,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Erros recorrentes 'The row you are trying to update doesn't exist' (node 'Registra Analise Solicitada') e 'Bad request' (Atualizar Card). Recuperado hoje.</div>
     <div class="ts">Último sucesso: 2026-06-16T11:30:01 · Último erro: 2026-06-15T14:28:08</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Registra Analise Solicitada</span> The row you are trying to update doesn't exist</div><div class="err"><span class="node">Atualizar Card</span> Bad request - please check your parameters</div><div class="err"><span class="node">Registra Analise Solicitada</span> The row you are trying to update doesn't exist</div></div>
     <div class="rec"><b>Ação sugerida:</b> Validar existência do registro antes do update e revisar parâmetros do card no Pipedrive.</div>
   </div>
@@ -117,6 +119,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Erros recorrentes 'Bad request' no node 'criar nota cadastro' (4x) e dependência 'buscar deals' não executada. Provável payload/condição quebrando um ramo.</div>
     <div class="ts">Último sucesso: 2026-06-16T06:40:48 · Último erro: 2026-06-11T20:58:32</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div><div class="err"><span class="node">criar nota cadastro</span> Bad request - please check your parameters</div></div>
     <div class="rec"><b>Ação sugerida:</b> Revisar parâmetros do node 'criar nota cadastro' e o condicional que pula 'buscar deals'.</div>
   </div>
@@ -131,6 +134,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Recuperado, mas houve ECONNREFUSED no Postgres (⟨ip-interno⟩:5432) à 00h de hoje no node 'SDL - adicionar deal' + rate-limit em 11/06.</div>
     <div class="ts">Último sucesso: 2026-06-16T15:08:34 · Último erro: 2026-06-16T00:09:59</div>
+    <div class="ts">📦 Entrega verificada: 8/8 sucessos entregaram</div>
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">SDL - adicionar deal</span> connect ECONNREFUSED ⟨ip-interno⟩:5432</div><div class="err"><span class="node">criar card comercial1</span> The service is receiving too many requests from you</div><div class="err"><span class="node">criar task aprovado</span> The service is receiving too many requests from you</div></div>
     <div class="rec"><b>Ação sugerida:</b> Investigar indisponibilidade momentânea do Postgres SDL e avaliar retry no node 'SDL - adicionar deal'.</div>
   </div>
@@ -145,6 +149,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Tool de altíssimo reúso (20 agentes). Node 'Consulta Estoque' deu 'Service unavailable' e 'resource not found' (14-15/06). Recuperado, mas o serviço de estoque oscilou.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:51:48 · Último erro: 2026-06-15T03:10:34</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">Consulta Estoque</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
     <div class="rec"><b>Ação sugerida:</b> Habilitar retry automático no node 'Consulta Estoque' e checar disponibilidade do serviço de estoque.</div>
   </div>
@@ -159,6 +164,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Erro recorrente 'Model output doesn't fit required format' no node 'AI Agent' (12-15/06, 5x). Saída do LLM fora do schema esperado.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:26:32 · Último erro: 2026-06-15T22:40:09</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div><div class="err"><span class="node">AI Agent</span> Model output doesn't fit required format</div></div>
     <div class="rec"><b>Ação sugerida:</b> Reforçar a instrução/parser de saída estruturada do AI Agent ou usar output parser com auto-fix.</div>
   </div>
@@ -173,6 +179,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> 'Multiple matches found' no node 'Estagio diferente?' 3x hoje + 'Wrong type: 171 é number, esperava string'. A busca de deal está retornando múltiplos resultados.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:52:41 · Último erro: 2026-06-16T11:49:43</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div><div class="err"><span class="node">Estagio diferente?</span> Multiple matches found</div></div>
     <div class="rec"><b>Ação sugerida:</b> Tornar a busca de deal mais específica (evitar múltiplos matches) e converter o id para string na condição.</div>
   </div>
@@ -187,6 +194,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Mesmo padrão do mover_card: 'Multiple matches found' (node Analise Credito) hoje + 'Bad request' no Pipedrive. Recuperado, mas recorrente.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:53:37 · Último erro: 2026-06-16T11:49:25</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Analise Credito1</span> Multiple matches found</div><div class="err"><span class="node">Analise Credito1</span> Multiple matches found</div><div class="err"><span class="node">Analise Credito</span> Multiple matches found</div></div>
     <div class="rec"><b>Ação sugerida:</b> Refinar a busca para retornar 1 registro e validar parâmetros do update no Pipedrive.</div>
   </div>
@@ -201,6 +209,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Tool de altíssimo reúso (16 agentes). Bug de código hoje: 'Cannot read properties of undefined (reading parts)' no node 'organizar informações1' + 'Service unavailable'. Último erro 14:51, sucesso 14:53.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:53:24 · Último erro: 2026-06-16T14:51:40</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">organizar informações1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div><div class="err"><span class="node">organizar informações1</span> Cannot read properties of undefined (reading 'parts')</div><div class="err"><span class="node">organizar informações1</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
     <div class="rec"><b>Ação sugerida:</b> Tratar resposta undefined (campo 'parts') no node 'organizar informações1' e habilitar retry no Service unavailable.</div>
   </div>
@@ -215,6 +224,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Cron com metade das execuções falhando: 'Your request is invalid' no node 'Upadte File' (commit GitHub). Backups parciais.</div>
     <div class="ts">Último sucesso: 2026-06-16T09:20:55 · Último erro: 2026-06-16T03:20:55</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div><div class="err"><span class="node">Upadte File</span> Your request is invalid or could not be processed by the service</div></div>
     <div class="rec"><b>Ação sugerida:</b> Investigar o node 'Upadte File' — possível conflito de SHA/arquivo ou rate-limit da API do GitHub.</div>
   </div>
@@ -229,6 +239,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Cron diário: sem execução registrada hoje (16/06) na janela e erros de rate-limit (09-12/06) no node 'pegar pipeline'. As execuções levam horas.</div>
     <div class="ts">Último sucesso: 2026-06-15T05:00:26 · Último erro: 2026-06-12T05:00:26</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div><div class="err"><span class="node">pegar pipeline</span> The service is receiving too many requests from you</div></div>
     <div class="rec"><b>Ação sugerida:</b> Confirmar se rodou hoje; adicionar throttle/backoff no node 'pegar pipeline' para evitar rate-limit do Pipedrive.</div>
   </div>
@@ -243,6 +254,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> Gateway timeout no node 'Cadastro Planilha' (Google Sheets) 4x em 15/06 + schema mismatch em 'midias_equipamentos' (00h hoje). Recuperado.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:59:36 · Último erro: 2026-06-16T00:00:30</div>
+    <div class="ts">📦 Entrega verificada: 8/8 sucessos entregaram</div>
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">midias_equipamentos</span> Received tool input did not match expected schema
 
 ✖ Required
@@ -260,6 +272,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟡 <b>Atenção.</b> PRINCIPAL ATIVO. Burst hoje (13:20-13:24) de 'last can't be used on undefined value' no node 'guardrail_output' (4x seguidas) + 'service not able to process' no 'Enviar hyper2'. Recuperou às 14:52, mas é bug ativo no guardrail.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:53:08 · Último erro: 2026-06-16T13:24:02</div>
+    <div class="ts">📦 Entrega verificada: 8/8 sucessos entregaram</div>
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div><div class="err"><span class="node">guardrail_output</span> last can't be used on undefined value</div></div>
     <div class="rec"><b>Ação sugerida:</b> Corrigir 'guardrail_output' para tratar saída undefined (proteger o .last) e investigar instabilidade do envio Hyperflow.</div>
   </div>
@@ -275,6 +288,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="diag">⚪ <b>Sem dados.</b> Nenhuma execução (sucesso ou erro) na janela. Pode ser webhook pouco acionado ou legado.</div>
     <div class="ts">Último sucesso: — · Último erro: —</div>
     
+    
     <div class="rec"><b>Ação sugerida:</b> Verificar se o gatilho ainda é usado ou se o fluxo virou legado.</div>
   </div>
 </div>
@@ -289,6 +303,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="diag">⚪ <b>Sem dados.</b> Sem execuções na janela — campanha de disparo sob demanda. Sem alarme.</div>
     <div class="ts">Último sucesso: — · Último erro: —</div>
     
+    
     <div class="rec"><b>Ação sugerida:</b> Confirmar se havia disparo planejado no período.</div>
   </div>
 </div>
@@ -302,6 +317,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Router A2A: timeouts no node 'Especialistas' e rate-limit no RAG (09-11/06); rodando normal hoje. Monitorar.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:51:27 · Último erro: 2026-06-11T18:50:08</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Especialistas</span> Request timed out.</div><div class="err"><span class="node">Especialistas</span> Request timed out.</div><div class="err"><span class="node">RAG_Base_Conhecimentos5</span> The service is receiving too many requests from you</div></div>
     
   </div>
@@ -316,6 +332,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Erros antigos de rate-limit e 'Parsing failed'; sucessos recentes hoje.</div>
     <div class="ts">Último sucesso: 2026-06-16T15:08:07 · Último erro: 2026-06-15T11:43:08</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Update a deal1</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Personalizar Mensagem</span> Parsing failed</div><div class="err"><span class="node">Personalizar Mensagem</span> Parsing failed</div></div>
     
   </div>
@@ -332,6 +349,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T03:40:03 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="netto" data-frente="captacao-leads">
@@ -344,6 +362,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Sucessos recentes, sem erros na janela.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:29:05 · Último erro: —</div>
+    
     
     
   </div>
@@ -360,6 +379,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T13:10:17 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
@@ -372,6 +392,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Rate-limit recorrente no RAG_Base_Conhecimentos (tema comum hoje); recuperado. Monitorar quota da base de conhecimento.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:51:23 · Último erro: 2026-06-16T00:01:15</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div><div class="err"><span class="node">RAG_Base_Conhecimentos</span> The service is receiving too many requests from you</div></div>
     
   </div>
@@ -388,6 +409,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T15:09:06 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
@@ -400,6 +422,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Sem erros na janela.</div>
     <div class="ts">Último sucesso: 2026-06-16T13:57:31 · Último erro: —</div>
+    
     
     
   </div>
@@ -416,6 +439,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T14:10:11 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
@@ -428,6 +452,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> 1 erro transitório 'service not able to process' (Transferir Hyper) em 15/06; ok desde então.</div>
     <div class="ts">Último sucesso: 2026-06-16T15:05:31 · Último erro: 2026-06-15T12:50:33</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Transferir Hyper</span> The service was not able to process your request</div></div>
     
   </div>
@@ -444,6 +469,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-15T14:19:32 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="carlos" data-frente="compartilhado">
@@ -456,6 +482,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Burst de rate-limit (node 'Buscar Deal') em 14/06; recuperado, sem erros desde.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:52:38 · Último erro: 2026-06-14T19:53:23</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div><div class="err"><span class="node">Buscar Deal</span> The service is receiving too many requests from you</div></div>
     
   </div>
@@ -470,6 +497,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> 1 erro antigo (09/06) de service unavailable; saudável hoje.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:53:49 · Último erro: 2026-06-09T13:59:58</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">chamar_suporte</span> Service unavailable - try again later or consider setting this node to retry automatically (in the node settings)</div></div>
     
   </div>
@@ -486,6 +514,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T03:10:41 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="carlos" data-frente="mariah">
@@ -498,6 +527,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> 1 timeout antigo (14/06); rodando ok.</div>
     <div class="ts">Último sucesso: 2026-06-16T13:00:17 · Último erro: 2026-06-14T13:00:58</div>
+    
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">agent_followup</span> Request timed out.</div></div>
     
   </div>
@@ -514,6 +544,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
     <div class="ts">Último sucesso: 2026-06-16T03:30:08 · Último erro: —</div>
     
     
+    
   </div>
 </div>
 <div class="card" data-status="ok" data-dono="estevao" data-frente="planejadora">
@@ -526,6 +557,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> PRINCIPAL ATIVO. Erros só em 11/06 ('Bad request procurar deals', 'Node Webhook hasn't been executed'); saudável hoje.</div>
     <div class="ts">Último sucesso: 2026-06-16T15:11:35 · Último erro: 2026-06-11T19:30:19</div>
+    <div class="ts">📦 Entrega verificada: 8/8 sucessos entregaram</div>
     <div class="errs"><b>Erros recentes:</b><div class="err"><span class="node">procurar deals</span> Bad request - please check your parameters</div><div class="err"><span class="node">Enviar orquestradora STIA</span> Node 'Webhook' hasn't been executed</div><div class="err"><span class="node">Enviar orquestradora STIA</span> Node 'Webhook' hasn't been executed</div></div>
     
   </div>
@@ -540,6 +572,7 @@ h1{margin:0;font-size:22px}h1 b{color:var(--amarelo)}
   <div class="cbody">
     <div class="diag">🟢 <b>Saudável.</b> Round-robin de leads sem erros na janela; saudável.</div>
     <div class="ts">Último sucesso: 2026-06-16T14:21:21 · Último erro: —</div>
+    
     
     
   </div>
